@@ -32,6 +32,7 @@
 - 🎥 [Milestone 2 Video](#)
   
 https://github.com/user-attachments/assets/0ca67aa3-c7d9-4692-854b-6975805250f7
+
 ---
 
 ## 🧑‍💻 Milestone 3: Python Scripted Control with MoveIt2 + GUI Control
@@ -45,8 +46,9 @@ https://github.com/user-attachments/assets/0ca67aa3-c7d9-4692-854b-6975805250f7
   - Control the gripper
 - Printed end-effector pose after motion execution.
 - 🎥 [Milestone 3 Video](#)
-- 
+
 https://github.com/user-attachments/assets/59b7aa42-4ee0-4e02-8d49-5a0e929987f5
+
 ---
 
 ## ⚙️ Requirements
@@ -54,7 +56,7 @@ https://github.com/user-attachments/assets/59b7aa42-4ee0-4e02-8d49-5a0e929987f5
 To run this project successfully, ensure you have the following installed:
 
 ### Operating System
-- Ubuntu 22.04 LTS (recommended)
+- Ubuntu 24.04 LTS 
 
 ### ROS 2
 - ROS 2 Jazzy 
