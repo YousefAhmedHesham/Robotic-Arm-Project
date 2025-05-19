@@ -1,0 +1,11 @@
+# Default initial positions for ym_robotic_arm's ros2_control fake system
+
+initial_positions:
+  joint1_21p0017_21p0088: 0.0
+  joint2_21p0017_21p0088: 0.0
+  joint3_21p0017_21p0088: 0.0
+  joint4_21p0017_21p0088: 0.0
+  joint5_21p0017_21p0088: 0.0
+  joint6_21p0017_21p0088: 0.0
+  joint7_21p0017_21p0088: 0.0
+  joint8_21p0017_21p0088: 0.0
