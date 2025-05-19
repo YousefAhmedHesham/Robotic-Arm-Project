@@ -17,7 +17,8 @@
 - Controller YAML file (`config/`)
 - Launch file (`launch/spawn_robot.launch.py`)
 - Report with screenshots
-- 🎥 [Milestone 1 Video](#)https://github.com/user-attachments/assets/3f67b7de-71e7-4056-97fe-9b34f08361a5
+- 🎥 [Milestone 1 Video](#)
+- https://github.com/user-attachments/assets/3f67b7de-71e7-4056-97fe-9b34f08361a5
 
 ---
 
