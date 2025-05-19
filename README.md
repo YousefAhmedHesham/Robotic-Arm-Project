@@ -11,12 +11,6 @@
 - Added joint limits, dynamics, and visuals for simulation.
 - Configured `ros2_control` via a `.yaml` file.
 - Created a `.launch.py` file to spawn the robot in Gazebo.
-
-### Deliverables:
-- URDF files (`urdf/`)
-- Controller YAML file (`config/`)
-- Launch file (`launch/spawn_robot.launch.py`)
-- Report with screenshots
 - 🎥 [Milestone 1 Video](#)
   
  https://github.com/user-attachments/assets/3f67b7de-71e7-4056-97fe-9b34f08361a5
@@ -35,16 +29,12 @@
   - **Position 1**: Based on Student A's ID
   - **Position 2**: Based on Student B's ID
 - Added gripper open/close positions.
-
-### Deliverables:
-- MoveIt2 config package (`moveit_config/`)
-- Launch files for RViz and Gazebo
-- Screenshots for each goal pose
 - 🎥 [Milestone 2 Video](#)
-
+  
+https://github.com/user-attachments/assets/0ca67aa3-c7d9-4692-854b-6975805250f7
 ---
 
-## 🧑‍💻 Milestone 3: Python Scripted Control with MoveIt2
+## 🧑‍💻 Milestone 3: Python Scripted Control with MoveIt2 + GUI Control
 
 **Goal:** Use Python to control the robotic arm via predefined and custom joint angles.
 
@@ -54,34 +44,47 @@
   - Move to custom positions based on student IDs (3 & 4)
   - Control the gripper
 - Printed end-effector pose after motion execution.
-
-### Deliverables:
-- Python scripts (`scripts/`)
-- Launch files to run simulation and script
-- Output screenshots from RViz/Gazebo
 - 🎥 [Milestone 3 Video](#)
-
+- 
+https://github.com/user-attachments/assets/59b7aa42-4ee0-4e02-8d49-5a0e929987f5
 ---
 
-## 👥 Team Members
+## ⚙️ Requirements
 
-- **Student A:** Name – ID: `XXXXXX`
-- **Student B:** Name – ID: `XXXXXX`
+To run this project successfully, ensure you have the following installed:
 
----
+### Operating System
+- Ubuntu 22.04 LTS (recommended)
 
-## 🧰 Requirements
+### ROS 2
+- ROS 2 Jazzy 
 
-- Ubuntu 22.04
-- ROS 2 Humble
-- Gazebo Classic
-- MoveIt2
+### Simulation and Planning Tools
+- Gazebo Classic (for simulation)
+- RViz2 (for visualization)
+- MoveIt2 (for motion planning)
+
+### Python and Libraries
 - Python 3.8+
+- `moveit_py`
+- `rclpy`
+- `geometry_msgs`
+- `sensor_msgs`
+- `PyQt5` or `Tkinter` (for GUI control, depending on your implementation)
 
----
+### Build Tools
+- colcon
+- rosdep
 
-## 🚀 How to Launch
+### Optional Tools
+- VS Code or any ROS-compatible IDE
+- Git (for version control)
 
-### Milestone 1: Spawn robot in Gazebo
+### Setup Instructions
+Make sure to run the following commands after cloning the repository:
 ```bash
-ros2 launch milestone1 spawn_robot.launch.py
+cd <your_workspace>
+rosdep install --from-paths src --ignore-src -r -y
+colcon build
+source install/setup.bash
+
