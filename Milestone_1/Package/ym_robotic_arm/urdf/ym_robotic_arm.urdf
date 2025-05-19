@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="ym_robotic_arm">
+  <link name="world" />
+  <joint name="base_joint" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.159117743658366 0.345845085875238 0.569753095878852" rpy="0 0 0" />
+      <mass value="72.8456791935468" />
+      <inertia ixx="2.30199373615997" ixy="0.000324874783814571" ixz="0.0360498315195983" iyy="2.34289554929916" iyz="-0.0782647235264406" izz="1.86913360615282" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0.43921568627451 0.0666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link1">
+    <inertial>
+      <origin xyz="0.155827284691087 0.279197150852684 -0.074273391103548" rpy="0 0 0" />
+      <mass value="15.0345747631906" />
+      <inertia ixx="0.361203633394744" ixy="-0.152719547274263" ixz="0.00578369610341311" iyy="0.64632442541179" iyz="0.0275015662482408" izz="0.643948025064086" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0.458823529411765 0.0470588235294118 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint1_21p0017_21p0088" type="revolute">
+    <origin xyz="0.10126 -0.63618 0.40242" rpy="1.5708 0 -0.11466" />
+    <parent link="base_link" />
+    <child link="link1" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.001" upper="3.142" effort="300" velocity="3" />
+    <ros2_control name="RobotSystem" type="system">
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      <joint name="joint1_21p0017_21p0088">
+        <command_interface name="position" />
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+    </ros2_control>
+  </joint>
+  <link name="link2">
+    <inertial>
+      <origin xyz="0.000189711922777669 0.303439631933813 0.0550908550295711" rpy="0 0 0" />
+      <mass value="13.9288112753567" />
+      <inertia ixx="0.59327749967659" ixy="-0.000669600616821314" ixz="0.000213384015815631" iyy="0.059161010891483" iyz="-0.0259775818793144" izz="0.593104827110172" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0.43921568627451 0.0666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint2_21p0017_21p0088" type="revolute">
+    <origin xyz="0.33802 0.38525 0.069436" rpy="0 0 -0.10451" />
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.57" upper="1.57" effort="200" velocity="3" />
+    <ros2_control name="RobotSystem" type="system">
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      <joint name="joint2_21p0017_21p0088">
+        <command_interface name="position" />
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+    </ros2_control>
+  </joint>
+  <link name="link3">
+    <inertial>
+      <origin xyz="-0.107771900006701 -0.0174850752932003 0.0614097337146782" rpy="0 0 0" />
+      <mass value="12.8502429459769" />
+      <inertia ixx="0.062242301869641" ixy="-0.00829144466335923" ixz="0.0216127915439534" iyy="0.443111588368463" iyz="0.00443914580996549" izz="0.455583584985905" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0.43921568627451 0.0666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint3_21p0017_21p0088" type="revolute">
+    <origin xyz="0 0.68 0" rpy="3.1416 0 3.136" />
+    <parent link="link2" />
+    <child link="link3" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.142" upper="0.001" effort="200" velocity="3" />
+    <ros2_control name="RobotSystem" type="system">
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      <joint name="joint3_21p0017_21p0088">
+        <command_interface name="position" />
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+    </ros2_control>
+  </joint>
+  <link name="link4">
+    <inertial>
+      <origin xyz="0.00742419040656672 0.105943725172242 0.010122790657165" rpy="0 0 0" />
+      <mass value="2.38079023737089" />
+      <inertia ixx="0.013835314663536" ixy="-0.00127247466975425" ixz="-7.81022968743045E-06" iyy="0.00431380109855561" iyz="1.86436615386661E-06" izz="0.0140397732905515" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0.43921568627451 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint4_21p0017_21p0088" type="revolute">
+    <origin xyz="-0.4765 -0.0225 0.077718" rpy="0 -1.5661 1.5708" />
+    <parent link="link3" />
+    <child link="link4" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.142" upper="3.142" effort="200" velocity="3" />
+    <ros2_control name="RobotSystem" type="system">
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      <joint name="joint4_21p0017_21p0088">
+        <command_interface name="position" />
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+    </ros2_control>
+  </joint>
+  <link name="link5">
+    <inertial>
+      <origin xyz="0.0491836000033552 9.87925008688606E-07 0.0563361987290827" rpy="0 0 0" />
+      <mass value="1.80203967651161" />
+      <inertia ixx="0.00560818919173605" ixy="-6.33423143524443E-07" ixz="0.000237160265856621" iyy="0.0114817789038683" iyz="-6.46322634928234E-07" izz="0.00875152934558554" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0.43921568627451 0.0666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint5_21p0017_21p0088" type="revolute">
+    <origin xyz="0.065683 0.19 0.0099766" rpy="-0.16315 0 -3.1416" />
+    <parent link="link4" />
+    <child link="link5" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-3.142" upper="0.001" effort="200" velocity="3" />
+    <ros2_control name="RobotSystem" type="system">
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      <joint name="joint5_21p0017_21p0088">
+        <command_interface name="position" />
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+    </ros2_control>
+  </joint>
+  <link name="link6">
+    <inertial>
+      <origin xyz="-0.0242738864865146 5.95022919824828E-11 3.63983509998889E-10" rpy="0 0 0" />
+      <mass value="0.190534239142049" />
+      <inertia ixx="0.000301965070085874" ixy="1.16869624160263E-13" ixz="3.68707668563228E-13" iyy="0.000228167325788642" iyz="-1.96554696499531E-11" izz="0.000118429273166684" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint6_21p0017_21p0088" type="revolute">
+    <origin xyz="0.049 0 0.20027" rpy="0.38369 1.5708 0" />
+    <parent link="link5" />
+    <child link="link6" />
+    <axis xyz="1 0 0" />
+    <limit lower="0.001" upper="3.142" effort="200" velocity="3" />
+    <ros2_control name="RobotSystem" type="system">
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      <joint name="joint6_21p0017_21p0088">
+        <command_interface name="position" />
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+    </ros2_control>
+  </joint>
+  <link name="link7">
+    <inertial>
+      <origin xyz="-0.602368573581705 0.400000000000006 0.0337429873001995" rpy="0 0 0" />
+      <mass value="0.116532917792388" />
+      <inertia ixx="3.92458903876157E-05" ixy="3.2727235499538E-19" ixz="-1.02579257431564E-05" iyy="7.11886398907187E-05" iyz="7.96210970419042E-20" izz="8.48753968585196E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link7.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint7_21p0017_21p0088" type="prismatic">
+    <origin xyz="0.53427 -0.4 -0.016243" rpy="0 0 0" />
+    <parent link="link6" />
+    <child link="link7" />
+    <axis xyz="0 0 1" />
+    <limit lower="0.001" upper="0.03" effort="200" velocity="3" />
+    <ros2_control name="RobotSystem" type="system">
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      <joint name="joint7_21p0017_21p0088">
+        <command_interface name="position" />
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+    </ros2_control>
+  </joint>
+  <link name="link8">
+    <inertial>
+      <origin xyz="-0.602368573581713 0.399999999999994 0.0337429873001964" rpy="0 0 0" />
+      <mass value="0.116532917792388" />
+      <inertia ixx="3.9245890387617E-05" ixy="-8.27974705941079E-20" ixz="-1.02579257431572E-05" iyy="7.11886398907205E-05" iyz="-1.0842021724855E-19" izz="8.48753968585223E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link8.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/meshes/link8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint8_21p0017_21p0088" type="prismatic">
+    <origin xyz="0.53427 0.4 0.016243" rpy="3.1416 0 0" />
+    <parent link="link6" />
+    <child link="link8" />
+    <axis xyz="0 0 1" />
+    <limit lower="0.001" upper="0.03" effort="200" velocity="3" />
+  </joint>
+  <ros2_control name="ym_robotic_arm" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      <param name="robot_description">$(find ym_robotic_arm)/urdf/ym_robotic_arm.urdf</param>
+      <param name="use_sim_time">true</param>
+    </hardware>
+    <joint name="joint1_21p0017_21p0088">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint2_21p0017_21p0088">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint3_21p0017_21p0088">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint4_21p0017_21p0088">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint5_21p0017_21p0088">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint6_21p0017_21p0088">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint7_21p0017_21p0088">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint8_21p0017_21p0088">
+      <command_interface name="position" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+  </ros2_control>
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>/home/yousefahmedhesham/robotics_ws/src/ym_robotic_arm/config/joint_controllers.yaml</parameters>
+      <controller_manager_node_name>controller_manager</controller_manager_node_name>
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+    </plugin>
+  </gazebo>
+</robot>
