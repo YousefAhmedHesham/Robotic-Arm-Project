@@ -1,0 +1,81 @@
+
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    arm_group_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    hand_group_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+arm_group_controller:
+  ros__parameters:
+    joints:
+      - joint1_21p0017_21p0088
+      - joint2_21p0017_21p0088
+      - joint3_21p0017_21p0088
+      - joint4_21p0017_21p0088
+      - joint5_21p0017_21p0088
+      - joint6_21p0017_21p0088
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    
+    # Improved tolerance settings
+    state_tolerances:
+      position: 0.06  # Increased from 0.05 to prevent false violations
+      velocity: 0.1
+      acceleration: 0.1
+    
+    # Trajectory constraints
+    constraints:
+      goal_time: 0.5  # Time tolerance for reaching goal (seconds)
+      stopped_velocity_tolerance: 0.02  # Velocity considered stopped
+    
+    # PID gains (if using PID controller)
+    gains:
+      joint1_21p0017_21p0088: {p: 100.0, i: 0.01, d: 1.0}
+      joint2_21p0017_21p0088: {p: 100.0, i: 0.01, d: 1.0}
+      joint3_21p0017_21p0088: {p: 100.0, i: 0.01, d: 1.0}
+      joint4_21p0017_21p0088: {p: 100.0, i: 0.01, d: 1.0}
+      joint5_21p0017_21p0088: {p: 100.0, i: 0.01, d: 1.0}
+      joint6_21p0017_21p0088: {p: 100.0, i: 0.01, d: 1.0}
+    
+    # Action server settings
+    action_monitor_rate: 50.0  # Hz (increased from default 20)
+    allow_partial_joints_goal: false
+    allow_nonzero_velocity_at_trajectory_end: true
+    open_loop_control: false  # Set to true if using simulation without physics
+
+hand_group_controller:
+  ros__parameters:
+    joints:
+      - joint7_21p0017_21p0088
+      - joint8_21p0017_21p0088
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    
+    # More relaxed tolerances for hand joints
+    state_tolerances:
+      position: 0.1
+      velocity: 0.2
+      acceleration: 0.2
+    
+    allow_nonzero_velocity_at_trajectory_end: true
+
+joint_state_broadcaster:
+  ros__parameters:
+    publish_rate: 50.0  # Hz
+
+
+
