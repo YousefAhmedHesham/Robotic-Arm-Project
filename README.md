@@ -72,7 +72,7 @@ To run this project successfully, ensure you have the following installed:
 - `rclpy`
 - `geometry_msgs`
 - `sensor_msgs`
-- `PyQt5` or `Tkinter` (for GUI control, depending on your implementation)
+- `PyQt5` or `Tkinter` 
 
 ### Build Tools
 - colcon
